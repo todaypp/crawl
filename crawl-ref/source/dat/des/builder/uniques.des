@@ -380,6 +380,10 @@ NAME:   uniq_zenata
 DEPTH:  Depths:2-, Zot:1-4, Crypt
 : place_unique(_G, "Zenata")
 
+NAME:   uniq_grunn
+DEPTH:  Depths:2-, Zot:1-4, Crypt
+: place_unique(_G, "Grunn")
+
 ################################################################################
 # Uniques which appear in neither the Dungeon nor the Depths:
 ################################################################################
