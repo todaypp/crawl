@@ -1247,10 +1247,6 @@ static string _damage_rating(const item_def &item)
     int plusses = slaying;
     if (item_ident(item, ISFLAG_KNOW_PLUSES))
         plusses += item.plus;
-    if (plusses > 0)
-        plusses = (plusses + 1) / 2;
-    else
-        plusses = (plusses - 1) / 2;
 
     brand_type brand = SPWPN_NORMAL;
     if (item_type_known(item))
@@ -1260,7 +1256,7 @@ static string _damage_rating(const item_def &item)
     rating = stat_modify_damage(rating, skill, true);
     rating = apply_weapon_skill(rating, skill, false);
     rating = apply_fighting_skill(rating, false, false);
-    rating += plusses * DAM_RATE_SCALE;
+    rating += plusses * DAM_RATE_SCALE / 2;
 
     const int brand_rating = max(0, _brand_bonus(rating, brand) / DAM_RATE_SCALE);
 
@@ -1272,7 +1268,7 @@ static string _damage_rating(const item_def &item)
     string plusses_desc;
     if (plusses)
     {
-        plusses_desc = make_stringf(" %s %d (%s)/2",
+        plusses_desc = make_stringf(" %s %d/2 ((%s)/2)",
                                     plusses < 0 ? "-" : "+",
                                     abs(plusses),
                                     slaying && item.plus ? "Ench + Slay" :
@@ -1285,7 +1281,7 @@ static string _damage_rating(const item_def &item)
         rating_per_time, rating, delay/10, delay % 10,
         _describe_brand(brand, brand_rating).c_str());
     const string per_hit = make_stringf(
-        "\n  (Per hit: Base %d x %d%% (%s) x %d%% (Skills)%s)",
+        "\n  (Per hit: Base %d x %d%% (%s) x %d%% (Skill)%s)",
         base_dam,
         stat_mult,
         use_str ? "Str" : "Dex",
