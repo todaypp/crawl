@@ -134,7 +134,7 @@ int to_hit_pct(const monster_info& mi, attack &atk, bool melee)
 int mon_to_hit_base(int hd, bool skilled)
 {
     const int hd_mult = skilled ? 5 : 3;
-    return 18 + hd * hd_mult / 2;
+    return 15 + hd * hd_mult / 2;
 }
 
 int mon_shield_bypass(int hd)
