@@ -182,9 +182,9 @@ static const vector<god_passive> god_passives[] =
 
     // Kikubaaqudgha
     {
-		{  1, passive_t::bonus_undead,
+                {  1, passive_t::bonus_undead,
               "GOD sometimes duplicates your necromantic allies",
-			  "GOD no longer duplicates your necromantic allies"
+                          "GOD no longer duplicates your necromantic allies"
         },
         {  2, passive_t::miscast_protection_necromancy,
               "GOD NOW protects you from necromancy miscasts"

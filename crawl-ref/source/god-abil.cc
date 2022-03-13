@@ -152,8 +152,10 @@ bool bless_weapon(god_type god, brand_type brand, colour_t colour)
     item_def& wpn(you.inv[item_slot]);
     // TSO and KIKU allow blessing ranged weapons, but LUGONU does not.
     if (!is_brandable_weapon(wpn, brand == SPWPN_HOLY_WRATH
-								  || brand == SPWPN_PAIN, true))
+                                                                  || brand == SPWPN_PAIN, true))
+    {
         return false;
+    }
 
     string prompt = "Do you wish to have " + wpn.name(DESC_YOUR)
                        + " ";
