@@ -665,7 +665,8 @@ void infestation_death_fineff::fire()
 
 void make_derived_undead_fineff::fire()
 {
-	int num_undead = have_passive(passive_t::bonus_undead) 
+	int num_undead = have_passive(passive_t::bonus_undead)
+			&& mg.behaviour == BEH_FRIENDLY
 			&& x_chance_in_y(200 + you.piety, 800) ? 2 : 1;
 	bool messaged = false;
     while(num_undead > 0)
