@@ -1751,7 +1751,7 @@ static bool _give_kiku_gift(bool forced)
             spell = random_choose(SPELL_SUBLIMATION_OF_BLOOD,
                                   SPELL_VAMPIRIC_DRAINING,
                                   SPELL_ANGUISH,
-                                  SPELL_ANIMATE_DEAD,
+                                  SPELL_ANIMATE_DEAD
                                   );
 
             if (!you.can_bleed(false) && spell == SPELL_SUBLIMATION_OF_BLOOD)
