@@ -697,7 +697,7 @@ void make_derived_undead_fineff::fire()
                 int dur = undead->type == MONS_SKELETON ? 2 : 5;
                 undead->add_ench(mon_enchant(ENCH_FAKE_ABJURATION, dur));
             }
-            
+
             if (!agent.empty())
                 mons_add_blame(undead, "animated by " + agent);
         }

@@ -1773,7 +1773,7 @@ static bool _give_kiku_gift(bool forced)
         {
             spell = random_choose(SPELL_DISPEL_UNDEAD,
                                   SPELL_CORPSE_ROT,
-                                  SPELL_AGONY,              
+                                  SPELL_AGONY,
                                   SPELL_BORGNJORS_VILE_CLUTCH,
                                   SPELL_DEATH_CHANNEL,
                                   SPELL_SIMULACRUM);
