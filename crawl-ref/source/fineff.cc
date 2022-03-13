@@ -18,6 +18,7 @@
 #include "env.h"
 #include "fight.h"
 #include "god-abil.h"
+#include "god-passive.h"
 #include "libutil.h"
 #include "losglobal.h"
 #include "melee-attack.h"
@@ -631,54 +632,78 @@ void avoided_death_fineff::fire()
 
 void infestation_death_fineff::fire()
 {
-    if (monster *scarab = create_monster(mgen_data(MONS_DEATH_SCARAB,
+	mgen_data bug = mgen_data(MONS_DEATH_SCARAB,
                                                    BEH_FRIENDLY, posn,
-                                                   MHITYOU, MG_AUTOFOE)
+                                                   MHITYOU, MG_AUTOFOE);
+    int num_scarabs = 1;
+	int seen = 0;
+	
+	if (have_passive(passive_t::bonus_undead) && x_chance_in_y(200 + you.piety, 800))
+		num_scarabs ++;
+	
+	while(num_scarabs >0)
+    {
+		num_scarabs--;
+		if (monster *scarab = create_monster(bug
                                          .set_summoned(&you, 0,
                                                        SPELL_INFESTATION),
                                          false))
+		{
+			scarab->add_ench(mon_enchant(ENCH_FAKE_ABJURATION, 5));
+			if (you.see_cell(posn) || you.can_see(*scarab))
+				seen++;	
+		}
+	}
+	
+	if(seen > 0)
     {
-        scarab->add_ench(mon_enchant(ENCH_FAKE_ABJURATION, 5));
-
-        if (you.see_cell(posn) || you.can_see(*scarab))
-        {
-            mprf("%s bursts from %s!", scarab->name(DESC_A, true).c_str(),
+		mprf("%s burst%s from %s!", seen == 1 ? "A scarab" : "Scarabs",
+									seen == 1 ? "s" : "",
                                        name.c_str());
-        }
-    }
+    }	
 }
 
 void make_derived_undead_fineff::fire()
 {
-    if (monster *undead = create_monster(mg))
+	int num_undead = have_passive(passive_t::bonus_undead) 
+			&& x_chance_in_y(200 + you.piety, 800) ? 2 : 1;
+	bool messaged = false;
+    while(num_undead > 0)
     {
-        if (!message.empty())
-            mpr(message);
+		num_undead--;
+		if (monster *undead = create_monster(mg))
+		{
+			if (!message.empty() && !messaged)
+			{
+				mpr(message);
+				messaged = true;
+			}
 
-        // If the original monster has been levelled up, its HD might be
-        // different from its class HD, in which case its HP should be
-        // rerolled to match.
-        if (undead->get_experience_level() != experience_level)
-        {
-            undead->set_hit_dice(max(experience_level, 1));
-            roll_zombie_hp(undead);
-        }
+			// If the original monster has been levelled up, its HD might be
+			// different from its class HD, in which case its HP should be
+			// rerolled to match.
+			if (undead->get_experience_level() != experience_level)
+			{
+				undead->set_hit_dice(max(experience_level, 1));
+				roll_zombie_hp(undead);
+			}
 
-        // Fix up custom names
-        if (!mg.mname.empty())
-            name_zombie(*undead, mg.base_type, mg.mname);
+			// Fix up custom names
+			if (!mg.mname.empty())
+				name_zombie(*undead, mg.base_type, mg.mname);
 
-        if (mg.god != GOD_YREDELEMNUL)
-        {
-            int dur = undead->type == MONS_SKELETON ? 2 : 5;
-            undead->add_ench(mon_enchant(ENCH_FAKE_ABJURATION, dur));
-        }
-        if (!agent.empty())
-        {
-            mons_add_blame(undead,
-                "animated by " + agent);
-        }
-    }
+			if (mg.god != GOD_YREDELEMNUL)
+			{
+				int dur = undead->type == MONS_SKELETON ? 2 : 5;
+				undead->add_ench(mon_enchant(ENCH_FAKE_ABJURATION, dur));
+			}
+			if (!agent.empty())
+			{
+				mons_add_blame(undead,
+					"animated by " + agent);
+			}
+		}
+	}
 }
 
 const actor *mummy_death_curse_fineff::fixup_attacker(const actor *a)
