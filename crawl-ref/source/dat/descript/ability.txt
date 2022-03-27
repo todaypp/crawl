@@ -198,17 +198,12 @@ Permanently blesses a weapon of your choice with the holy wrath of the Shining
 One. Demon weapons will be converted into a more powerful sacred weapon. This
 blessing may only be used once, and it cannot be used on artefact weapons.
 %%%%
-# Kikubaaqudgha
-Receive Corpses ability
-
-Creates one or more reanimatable monster corpses nearby. The number and
-freshness of these are dependent on Necromancy skill.
-%%%%
 Torment ability
 
-Sacrifices an adjacent cadaver to make all living creatures in sight experience
-all the pain that being suffered in its life. This damage is never directly
-lethal. Kikubaaqudgha will always at least partially shield you from the effect.
+Open a link to the spirit of the dead, making all living creatures in sight
+experience all the pain that spirit suffered in its life. This damage is never
+directly lethal. Kikubaaqudgha will always at least partially shield you from
+the effect.
 %%%%
 Brand Weapon With Pain ability
 
@@ -440,11 +435,6 @@ Give Item to Named Follower ability
 
 Gives a weapon or piece of armour to a named orcish follower. An orc can only
 ever receive one of these gifts.
-%%%%
-Resurrection ability
-
-Bring an orc corpse back to life. The orc will be an ally, even if it was not
-already one before it died.
 %%%%
 # Fedhas
 Wall of Briars ability
