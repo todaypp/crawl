@@ -1239,9 +1239,7 @@ static void _make_derived_undead(monster* mons, bool quiet,
 
 static void _make_simulacra(monster* mons, int pow, god_type god)
 {
-    // Number of simulacra is a function of power.
-    int count  = 1 + random2(1 + div_rand_round(pow, 20));
-
+    const int count = 1 + random2(1 + div_rand_round(pow, 20));
     for (int i = 0; i < count; ++i)
     {
         _make_derived_undead(mons, true, MONS_SIMULACRUM, BEH_FRIENDLY,
@@ -1336,13 +1334,10 @@ static void _yred_reap(monster &mons, bool expl)
 
 static bool _animate_dead_reap(monster &mons)
 {
-    if (! you.duration[DUR_ANIMATE_DEAD])
+    if (!you.duration[DUR_ANIMATE_DEAD])
         return false;
-
-    int rd = 0;
-    if (you.props.exists(ANIMATE_DEAD_POWER_KEY))
-        rd = you.props[ANIMATE_DEAD_POWER_KEY].get_int();
-    if (!x_chance_in_y(100 + rd, 200))
+    const int pow = you.props[ANIMATE_DEAD_POWER_KEY].get_int();
+    if (!x_chance_in_y(100 + pow, 200))
         return false;
 
     return _mons_reaped(you, mons);
@@ -1366,6 +1361,19 @@ static bool _reaping(monster &mons)
     return _mons_reaped(*killer, mons);
 }
 
+static bool _try_place_miasma_at(coord_def p)
+{
+    if (cell_is_solid(p))
+        return false;
+
+    cloud_struct *cl = cloud_at(p);
+    if (cl && !is_harmless_cloud(cl->type))
+        return false;
+
+    place_cloud(CLOUD_MIASMA, p, 2 + random2avg(8, 2), &you);
+    return true;
+}
+
 static void _corpse_rot(monster &mons, int pow)
 {
     if (!mons_can_be_zombified(mons))
@@ -1376,34 +1384,26 @@ static void _corpse_rot(monster &mons, int pow)
 
     for (fair_adjacent_iterator ai(center); ai; ++ai)
     {
-        if (rot == 0)
-            break;
-
-        if (cell_is_solid(*ai) || cloud_at(*ai))
-            continue;
-
-        place_cloud(CLOUD_MIASMA, *ai, 2 + random2avg(8, 2), &you);
-        --rot;
-    }
-
-    // Continue out to radius 2 if radius 1 is full
-    if (rot)
-    {
-        for (distance_iterator di(center, true, true, 2); di; ++di)
+        if (_try_place_miasma_at(*ai))
         {
-            if (rot == 0)
-                break;
-
-            if (cell_is_solid(*di) || cloud_at(*di))
-                continue;
-
-            place_cloud(CLOUD_MIASMA, *di, 2 + random2avg(8, 2), &you);
             --rot;
+            if (!rot)
+                return;
         }
     }
 
-    if (rot)
-        mprf("You %s decay.", you.can_smell() ? "smell" : "sense");
+    // Continue out to radius 2 if radius 1 is full
+    for (distance_iterator di(center, true, true, 2); di; ++di)
+    {
+        if (_try_place_miasma_at(*di))
+        {
+            --rot;
+            if (!rot)
+                return;
+        }
+    }
+
+    mprf("You %s decay.", you.can_smell() ? "smell" : "sense");
 }
 
 static bool _god_will_bless_follower(monster* victim)
