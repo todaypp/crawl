@@ -45,9 +45,9 @@ higher power, the spirit becomes more durable.
 %%%%
 Animate Dead spell
 
-Reanimates living creatures killed by the caster as zombies for a duration. The
-chance of reanimating a monster and the duration of the effect increase with
-spell power. Zombies cannot leave the level they were created on.
+For some time after casting this, living creatures killed by the caster will rise
+as zombies. The chance of reanimating a monster and the duration of the effect
+increase with spell power. Zombies cannot leave the level they were created on.
 %%%%
 Animate Skeleton spell
 
@@ -1023,9 +1023,9 @@ an inability to consume potions.
 %%%%
 Necrotize spell
 
-Rots away the flesh of one living creature, causing great pain. If the creature
-is slain by the spell, or immediately afterwards, its skeleton may rise to fight
-for the caster for a short time.
+Agonizingly rots away the victim's flesh. Those slain by this spell (or otherwise
+dying immediately afterward) may rise as skeletons to fight for the caster. Only
+the living can be affected.
 %%%%
 Noxious Cloud spell
 
