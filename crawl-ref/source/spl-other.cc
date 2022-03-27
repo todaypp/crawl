@@ -81,7 +81,7 @@ spret cast_death_channel(int pow, god_type god, bool fail)
     return spret::success;
 }
 
-spret cast_animate_dead(int pow, god_type god, bool fail)
+spret cast_animate_dead(int pow, bool fail)
 {
     fail_check();
     mpr("You call upon the dead to rise.");

@@ -15,7 +15,7 @@ class actor;
 
 spret cast_sublimation_of_blood(int pow, bool fail);
 spret cast_death_channel(int pow, god_type god, bool fail);
-spret cast_animate_dead(int pow, god_type god, bool fail);
+spret cast_animate_dead(int pow, bool fail);
 
 enum class recall_t
 {

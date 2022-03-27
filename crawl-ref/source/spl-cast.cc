@@ -1206,15 +1206,6 @@ static vector<coord_def> _simple_find_all_hostiles()
     return result;
 }
 
-// wrapper around the simulacrum corpse check
-static vector<coord_def> _find_simulacrable_corpses(const coord_def &c)
-{
-    vector<coord_def> result;
-    if (find_simulacrable_corpse(c) >= 0)
-        result.push_back(c);
-    return result;
-}
-
 // TODO: refactor into target.cc, move custom classes out of target.h
 unique_ptr<targeter> find_spell_targeter(spell_type spell, int pow, int range)
 {
@@ -2287,7 +2278,7 @@ static spret _do_cast(spell_type spell, int powc, const dist& spd,
         return cast_summon_forest(&you, powc, god, fail);
 
     case SPELL_ANIMATE_DEAD:
-        return cast_animate_dead(powc, god, fail);
+        return cast_animate_dead(powc, fail);
 
     case SPELL_HAUNT:
         return cast_haunt(powc, beam.target, god, fail);
