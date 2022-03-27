@@ -635,19 +635,19 @@ void infestation_death_fineff::fire()
     mgen_data bug = mgen_data(MONS_DEATH_SCARAB,
                               BEH_FRIENDLY, posn,
                               MHITYOU, MG_AUTOFOE);
+    bug.set_summoned(&you, 0, SPELL_INFESTATION);
+
     int num_scarabs = 1;
-    int seen = 0;
-
-    if (have_passive(passive_t::bonus_undead) && x_chance_in_y(200 + you.piety, 800))
-            num_scarabs ++;
-
-    while (num_scarabs >0)
+    if (have_passive(passive_t::bonus_undead)
+        && x_chance_in_y(200 + you.piety, 800))
     {
-        num_scarabs--;
-        if (monster *scarab = create_monster(bug
-                                            .set_summoned(&you, 0,
-                                            SPELL_INFESTATION),
-                                            false))
+            ++num_scarabs;
+    }
+
+    int seen = 0;
+    for (int i = 0; i < num_scarabs; ++i)
+    {
+        if (monster *scarab = create_monster(bug, false))
         {
             scarab->add_ench(mon_enchant(ENCH_FAKE_ABJURATION, 5));
             if (you.see_cell(posn) || you.can_see(*scarab))
@@ -657,8 +657,10 @@ void infestation_death_fineff::fire()
 
     if (seen > 0)
     {
-        mprf("%s burst%s from %s!", seen == 1 ? "A scarab" : "Scarabs",
-                                    seen == 1 ? "s" : "", name.c_str());
+        mprf("%s %s from %s!",
+             seen == 1 ? "A scarab" : "Scarabs",
+             conjugate_verb("burst", seen > 1).c_str(),
+             name.c_str());
     }
 }
 
