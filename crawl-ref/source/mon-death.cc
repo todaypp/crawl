@@ -2447,9 +2447,7 @@ item_def* monster_die(monster& mons, killer_type killer,
             }
             else if (mons.has_ench(ENCH_SIMULACRUM))
             {
-                int simu_pow = 0;
-                if (mons.props.exists(SIMULACRUM_POWER_KEY))
-                    simu_pow = mons.props[SIMULACRUM_POWER_KEY].get_int();
+                const int simu_pow = mons.props[SIMULACRUM_POWER_KEY].get_int();
                 _make_simulacra(&mons, simu_pow, GOD_NO_GOD);
                 corpse_consumed = true;
             }
@@ -2480,9 +2478,7 @@ item_def* monster_die(monster& mons, killer_type killer,
         // currently allowing this to stack with other death effects -hm
         if (you.duration[DUR_CORPSE_ROT])
         {
-            int rot_pow = 0;
-                if (you.props.exists(CORPSE_ROT_POWER_KEY))
-                    rot_pow = you.props[CORPSE_ROT_POWER_KEY].get_int();
+            const int rot_pow = you.props[CORPSE_ROT_POWER_KEY].get_int();
             _corpse_rot(mons, rot_pow);
         }
     }
