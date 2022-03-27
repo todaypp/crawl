@@ -71,7 +71,6 @@
 #include "spl-miscast.h"
 #include "spl-summoning.h"
 #include "spl-util.h"
-#include "spl-wpnench.h"
 #include "stash.h"
 #include "state.h"
 #include "stringutil.h" // to_string on Cygwin
@@ -1452,22 +1451,6 @@ static string _describe_weapon(const item_def &item, bool verbose)
             break;
         }
     }
-
-#if TAG_MAJOR_VERSION == 34
-    if (you.duration[DUR_EXCRUCIATING_WOUNDS] && &item == you.weapon())
-    {
-        description += "\nIt is temporarily rebranded; it is actually ";
-        if ((int) you.props[ORIGINAL_BRAND_KEY] == SPWPN_NORMAL)
-            description += "an unbranded weapon.";
-        else
-        {
-            brand_type original = static_cast<brand_type>(
-                you.props[ORIGINAL_BRAND_KEY].get_int());
-            description += article_a(
-                weapon_brand_desc("weapon", item, false, original) + ".", true);
-        }
-    }
-#endif
 
     string art_desc = _artefact_descrip(item);
     if (!art_desc.empty())

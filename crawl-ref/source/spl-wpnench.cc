@@ -19,37 +19,6 @@
 #include "spl-miscast.h"
 #include "spl-summoning.h"
 
-/** End your weapon branding spell.
- *
- * Returns the weapon to the previous brand, and ends DUR_EXCRUCIATING_WOUNDS.
- * @param weapon The item in question (which may have just been unwielded).
- * @param verbose whether to print a message about expiration.
- */
-void end_weapon_brand(item_def &weapon, bool verbose)
-{
-    ASSERT(you.duration[DUR_EXCRUCIATING_WOUNDS]);
-
-    set_item_ego_type(weapon, OBJ_WEAPONS, you.props[ORIGINAL_BRAND_KEY]);
-    you.props.erase(ORIGINAL_BRAND_KEY);
-    you.duration[DUR_EXCRUCIATING_WOUNDS] = 0;
-
-    if (verbose)
-    {
-        mprf(MSGCH_DURATION, "%s seems less pained.",
-             weapon.name(DESC_YOUR).c_str());
-    }
-
-    you.wield_change = true;
-    const brand_type real_brand = get_weapon_brand(weapon);
-    if (real_brand == SPWPN_ANTIMAGIC)
-        calc_mp();
-    if (you.weapon() && is_holy_item(weapon) && you.form == transformation::lich)
-    {
-        mprf(MSGCH_DURATION, "%s falls away!", weapon.name(DESC_YOUR).c_str());
-        unequip_item(EQ_WEAPON);
-    }
-}
-
 spret cast_confusing_touch(int power, bool fail)
 {
     fail_check();
