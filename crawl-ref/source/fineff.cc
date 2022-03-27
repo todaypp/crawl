@@ -670,39 +670,38 @@ void make_derived_undead_fineff::fire()
                      && mg.behaviour == BEH_FRIENDLY
                      && x_chance_in_y(200 + you.piety, 800) ? 2 : 1;
     bool messaged = false;
-    while (num_undead > 0)
+    for (int i = 0; i < num_undead; ++i)
     {
-        num_undead--;
-        if (monster *undead = create_monster(mg))
+        monster *undead = create_monster(mg);
+        if (!undead) continue;
+
+        if (!message.empty() && !messaged)
         {
-            if (!message.empty() && !messaged)
-            {
-                mpr(message);
-                messaged = true;
-            }
-
-            // If the original monster has been levelled up, its HD might be
-            // different from its class HD, in which case its HP should be
-            // rerolled to match.
-            if (undead->get_experience_level() != experience_level)
-            {
-                undead->set_hit_dice(max(experience_level, 1));
-                roll_zombie_hp(undead);
-            }
-
-            // Fix up custom names
-            if (!mg.mname.empty())
-                name_zombie(*undead, mg.base_type, mg.mname);
-
-            if (mg.god != GOD_YREDELEMNUL)
-            {
-                int dur = undead->type == MONS_SKELETON ? 2 : 5;
-                undead->add_ench(mon_enchant(ENCH_FAKE_ABJURATION, dur));
-            }
-
-            if (!agent.empty())
-                mons_add_blame(undead, "animated by " + agent);
+            mpr(message);
+            messaged = true;
         }
+
+        // If the original monster has been levelled up, its HD might be
+        // different from its class HD, in which case its HP should be
+        // rerolled to match.
+        if (undead->get_experience_level() != experience_level)
+        {
+            undead->set_hit_dice(max(experience_level, 1));
+            roll_zombie_hp(undead);
+        }
+
+        // Fix up custom names
+        if (!mg.mname.empty())
+            name_zombie(*undead, mg.base_type, mg.mname);
+
+        if (mg.god != GOD_YREDELEMNUL)
+        {
+            int dur = undead->type == MONS_SKELETON ? 2 : 5;
+            undead->add_ench(mon_enchant(ENCH_FAKE_ABJURATION, dur));
+        }
+
+        if (!agent.empty())
+            mons_add_blame(undead, "animated by " + agent);
     }
 }
 
