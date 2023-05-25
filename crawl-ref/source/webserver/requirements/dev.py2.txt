@@ -133,7 +133,7 @@ testfixtures==6.17.1
     # via flake8-isort
 toml==0.10.2
     # via tox
-tornado==5.1.1
+tornado==6.3.2
     # via -r requirements.in/base.txt
 tox==3.21.4
     # via -r requirements.in/dev.txt
