@@ -1,0 +1,381 @@
+repo_name: todaypp/crawl
+report_id: e13983d3f19ae5da904a3340afd05b0d
+version: 0.1
+repo_type: Public
+timestamp: '2024-01-29T14:23:51+00:00'
+requested_by: regret-index
+provider: github
+branch: master
+detected_tools_count: 32
+tools:
+- name: ASP.NET
+  description: An open source web framework for building modern web apps and services
+    with .NET
+  website_url: https://www.asp.net/
+  version: '4.5'
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/6755/2c45151a4a11d3a3c8e71bb34dd069d6_400x400.png
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/crawl-ref/source/MSVC/dat.csproj
+  detection_source: crawl-ref/source/MSVC/dat.csproj
+  last_updated_by: Pete Hurst
+  last_updated_on: 2013-05-24 10:06:14.000000000 Z
+- name: C lang
+  description: One of the most widely used programming languages of all time
+  website_url: http://en.wikipedia.org/wiki/C_(programming_language)
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/no-img-open-source.png
+  detection_source_url: https://github.com/todaypp/crawl
+  detection_source: Repo Metadata
+- name: C#
+  description: Simple, general-purpose, object-oriented programming language for the
+    .NET platform
+  website_url: http://csharp.net
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1015/1200px-C_Sharp_wordmark.svg.png
+  detection_source_url: https://github.com/todaypp/crawl
+  detection_source: Repo Metadata
+- name: C++
+  description: Has imperative, object-oriented and generic programming features, while
+    also providing the facilities for low level memory manipulation
+  website_url: http://www.cplusplus.com/
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1049/cplusplus.png
+  detection_source_url: https://github.com/todaypp/crawl
+  detection_source: Repo Metadata
+- name: CSS 3
+  description: The latest evolution of the Cascading Style Sheets language
+  website_url: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/todaypp/crawl
+  detection_source: Repo Metadata
+- name: Java
+  description: A concurrent, class-based, object-oriented, language specifically designed
+    to have as few implementation dependencies as possible
+  website_url: https://www.java.com
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/995/K85ZWV2F.png
+  detection_source_url: https://github.com/todaypp/crawl
+  detection_source: Repo Metadata
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/todaypp/crawl
+  detection_source: Repo Metadata
+- name: Lua
+  description: Powerful, fast, lightweight, embeddable scripting language
+  website_url: http://www.lua.org/
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/2118/128px-Lua-Logo.svg.png
+  detection_source_url: https://github.com/todaypp/crawl
+  detection_source: Repo Metadata
+- name: Objective-C
+  description: The primary programming language you use when writing software for
+    OS X and iOS
+  website_url: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1008/xcode.png
+  detection_source_url: https://github.com/todaypp/crawl
+  detection_source: Repo Metadata
+- name: Perl
+  description: Highly capable, feature-rich programming language with over 26 years
+    of development
+  website_url: http://www.perl.org/
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1048/perl.png
+  detection_source_url: https://github.com/todaypp/crawl
+  detection_source: Repo Metadata
+- name: Python
+  description: A clear and powerful object-oriented programming language, comparable
+    to Perl, Ruby, Scheme, or Java.
+  website_url: https://www.python.org
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/993/pUBY5pVj.png
+  detection_source_url: https://github.com/todaypp/crawl
+  detection_source: Repo Metadata
+- name: ".NET"
+  description: A free, cross-platform, open source developer platform for building
+    many different types of applications
+  website_url: http://www.microsoft.com/net/
+  version: '4.5'
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Frameworks (Full Stack)
+  image_url: https://img.stackshare.io/service/1014/IoPy1dce_400x400.png
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/crawl-ref/source/MSVC/dat.csproj
+  detection_source: crawl-ref/source/MSVC/dat.csproj
+  last_updated_by: Pete Hurst
+  last_updated_on: 2013-05-24 10:06:14.000000000 Z
+- name: Android SDK
+  description: An SDK that provides you the API libraries and developer tools necessary
+    to build, test, and debug apps for Android.
+  website_url: http://developer.android.com
+  version: '33.0'
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Frameworks (Full Stack)
+  image_url: https://img.stackshare.io/service/1010/m8jf0po4imu8t5eemjdd.png
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/crawl-ref/source/android-project/app/build.gradle.in
+  detection_source: crawl-ref/source/android-project/app/build.gradle.in
+  last_updated_by: robertxgray
+  last_updated_on: 2021-04-09 17:57:54.000000000 Z
+- name: Tornado
+  description: A Python web framework and asynchronous networking library, originally
+    developed at FriendFeed
+  website_url: http://www.tornadoweb.org/
+  version: 6.0.4
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Frameworks (Full Stack)
+  image_url: https://img.stackshare.io/service/1002/tornado.png
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/crawl-ref/source/webserver/requirements/base.py3.txt
+  detection_source: crawl-ref/source/webserver/requirements.in/base.txt
+  last_updated_by: Alex Jurkiewicz
+  last_updated_on: 2020-04-03 07:58:45.000000000 Z
+- name: Codecov
+  description: Hosted coverage reports with awesome features to enhance your CI workflow
+  website_url: https://codecov.io/
+  open_source: false
+  hosted_saas: true
+  category: Build, Test, Deploy
+  sub_category: Code Coverage
+  image_url: https://img.stackshare.io/service/2673/Codecov_Mark_Circle_Pink.png
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/codecov.yml
+  detection_source: codecov.yml
+  last_updated_by: Alex Jurkiewicz
+  last_updated_on: 2020-02-11 20:13:26.000000000 Z
+- name: GNU sed
+  description: A non-interactive command-line text editor
+  website_url: https://www.gnu.org/software/sed/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Text Editor
+  image_url: https://img.stackshare.io/service/3635/default_6369b655647204026aee2fa41eaa721d27a30528.png
+  detection_source_url: https://github.com/todaypp/crawl
+  detection_source: Repo Metadata
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/todaypp/crawl
+  detection_source: Repo Metadata
+- name: GitHub Actions
+  description: Automate your workflow from idea to production
+  website_url: https://github.com/features/actions
+  open_source: false
+  hosted_saas: true
+  category: Build, Test, Deploy
+  sub_category: Continuous Integration
+  image_url: https://img.stackshare.io/service/11563/actions.png
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/.github/workflows/ci.yml
+  detection_source: ".github/workflows/ci.yml"
+  last_updated_by: hellmonk
+  last_updated_on: 2023-09-18 19:40:52.000000000 Z
+- name: Gradle
+  description: A powerful build system for the JVM
+  website_url: https://www.gradle.org/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Java Build Tools
+  image_url: https://img.stackshare.io/service/975/gradlephant-social-black-bg.png
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/crawl-ref/source/android-project/build.gradle
+  detection_source: crawl-ref/source/android-project/build.gradle
+  last_updated_by: robertxgray
+  last_updated_on: 2023-03-16 22:48:53.000000000 Z
+- name: PyPI
+  description: A repository of software for the Python programming language
+  website_url: https://pypi.org/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Hosted Package Repository
+  image_url: https://img.stackshare.io/service/12572/-RIWgodF_400x400.jpg
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/crawl-ref/source/webserver/requirements/dev.py3.txt
+  detection_source: crawl-ref/source/webserver/requirements/dev.py3.txt
+  last_updated_by: Aidan Holm
+  last_updated_on: 2020-03-01 13:55:32.000000000 Z
+- name: Visual Studio
+  description: State-of-the-art tools and services that you can use to create great
+    apps for devices, the cloud, and everything in between.
+  website_url: http://msdn.microsoft.com/en-us/vstudio/aa718325.aspx
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Integrated Development Environment
+  image_url: https://img.stackshare.io/service/1451/SR2hUhQN.png
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/crawl-ref/source/MSVC/crawl-ref.sln
+  detection_source: crawl-ref/source/MSVC/crawl-ref.sln
+  last_updated_by: stenella
+  last_updated_on: 2018-10-28 00:39:08.000000000 Z
+- name: flake8
+  description: Tool for style guide enforcement
+  website_url: https://github.com/PyCQA/flake8
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Code Review
+  image_url: https://img.stackshare.io/service/4838/default_c37162891c64eca7fafe782d9c191e409aae1e93.png
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/crawl-ref/source/webserver/requirements.in/dev.txt
+  detection_source: crawl-ref/source/webserver/requirements.in/dev.txt
+  last_updated_by: advil
+  last_updated_on: 2021-02-13 21:38:16.000000000 Z
+- name: isort
+  description: " A Python utility / library to sort imports"
+  website_url: https://pycqa.github.io/isort/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Code Review
+  image_url: https://img.stackshare.io/service/4835/default_0a87fe83d3c6dc2bd452e7bf2428b32269c080d2.png
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/crawl-ref/source/webserver/requirements.in/dev.txt
+  detection_source: crawl-ref/source/webserver/requirements.in/dev.txt
+  last_updated_by: Aidan Holm
+  last_updated_on: 2020-03-01 13:55:32.000000000 Z
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/crawl-ref/source/webserver/requirements/dev.py3.txt
+  detection_source: crawl-ref/source/webserver/requirements/dev.py3.txt
+  last_updated_by: Aidan Holm
+  last_updated_on: 2020-03-01 13:55:32.000000000 Z
+- name: pytest
+  description: A full-featured Python testing tool to help you write better programs
+  website_url: http://pytest.org/latest/
+  version: 5.4.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Testing Frameworks
+  image_url: https://img.stackshare.io/service/4586/Lu99Qe0Z_400x400.png
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/crawl-ref/source/webserver/requirements/dev.py3.txt
+  detection_source: crawl-ref/source/webserver/requirements.in/dev.txt
+  last_updated_by: Aidan Holm
+  last_updated_on: 2020-03-01 13:55:32.000000000 Z
+- name: Android OS
+  description: An open source mobile operating system by Google
+  website_url: https://www.android.com
+  version: '13.0'
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Operating Systems
+  image_url: https://img.stackshare.io/service/9586/ZvmtaSXW_400x400.jpg
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/crawl-ref/source/android-project/app/build.gradle.in
+  detection_source: crawl-ref/source/android-project/app/build.gradle.in
+  last_updated_by: robertxgray
+  last_updated_on: 2021-04-09 17:57:54.000000000 Z
+- name: NSIS
+  description: Professional open source system to create Windows installers
+  website_url: http://nsis.sourceforge.net/
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/4728/Box.gif
+  detection_source_url: https://github.com/todaypp/crawl
+  detection_source: Repo Metadata
+- name: PyYAML
+  website_url: http://pyyaml.org/wiki/PyYAML
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/3730/no-img-open-source.png
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/crawl-ref/source/webserver/requirements.in/base.txt
+  detection_source: crawl-ref/source/webserver/requirements.in/base.txt
+  last_updated_by: Aidan Holm
+  last_updated_on: 2020-03-01 13:55:32.000000000 Z
+- name: Shell
+  description: A shell is a text-based terminal, used for manipulating programs and
+    files. Shell scripts typically manage program execution.
+  website_url: https://en.wikipedia.org/wiki/Shell_script
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
+  detection_source_url: https://github.com/todaypp/crawl
+  detection_source: Repo Metadata
+- name: mypy
+  description: Developers of mypy, a Python variant with seamless dynamic and static
+    typing
+  website_url: http://mypy-lang.org/
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/7350/eaca159133a3901e24ddb407d1235c25_normal.png
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/crawl-ref/source/webserver/requirements/dev.py3.txt
+  detection_source: crawl-ref/source/webserver/requirements/dev.py3.txt
+  last_updated_by: robertxgray
+  last_updated_on: 2022-01-02 23:40:09.000000000 Z
+- name: tox
+  description: We host the world's documentation. Maintained by @ericholscher &amp;
+    @agjhnsn. Not a support channel, please use GitHub.
+  website_url: https://tox.readthedocs.org/en/latest/
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/4825/OhsWgbsr_normal.png
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/crawl-ref/source/webserver/requirements.in/dev.txt
+  detection_source: crawl-ref/source/webserver/requirements.in/dev.txt
+  last_updated_by: Aidan Holm
+  last_updated_on: 2020-03-01 13:55:32.000000000 Z
+- name: virtualenv
+  description: Local environment for python
+  website_url: https://virtualenv.pypa.io/en/latest/
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/3581/no-img-open-source.png
+  detection_source_url: https://github.com/todaypp/crawl/blob/master/crawl-ref/source/webserver/requirements/dev.py3.txt
+  detection_source: crawl-ref/source/webserver/requirements/dev.py3.txt
+  last_updated_by: Alex Jurkiewicz
+  last_updated_on: 2020-04-03 07:58:45.000000000 Z
