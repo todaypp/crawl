@@ -2,7 +2,7 @@ repo_name: todaypp/crawl
 report_id: e13983d3f19ae5da904a3340afd05b0d
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-29T14:23:51+00:00'
+timestamp: '2024-02-29T19:33:56+00:00'
 requested_by: regret-index
 provider: github
 branch: master
@@ -268,7 +268,7 @@ tools:
   last_updated_by: advil
   last_updated_on: 2021-02-13 21:38:16.000000000 Z
 - name: isort
-  description: " A Python utility / library to sort imports"
+  description: A Python utility / library to sort imports
   website_url: https://pycqa.github.io/isort/
   license: MIT
   open_source: true
